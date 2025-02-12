@@ -1,0 +1,29 @@
+.ContectItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  padding: 0 10px;
+  margin-bottom: 10px;
+
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.ContectItems .name {
+  width: 70px;
+}
+
+.ContectItems .email {
+  flex: 1;
+}
+
+.ContectItems button {
+  font-weight: bold;
+  background-color: white;
+  height: 30px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}

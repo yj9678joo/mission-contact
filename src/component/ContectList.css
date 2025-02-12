@@ -1,0 +1,9 @@
+.ContectList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}

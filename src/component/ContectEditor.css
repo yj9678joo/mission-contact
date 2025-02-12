@@ -1,0 +1,32 @@
+.ContectEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.ContectEditor > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.ContectEditor > div > input {
+  height: 30px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+
+.ContectEditor .email {
+  flex: 1;
+}
+
+.ContectEditor button {
+  font-weight: bold;
+  background-color: white;
+  height: 30px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
