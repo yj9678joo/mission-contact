@@ -1,5 +1,9 @@
 import "./ContectItems.css";
-const ContectItems = ({ id, name, email, onDelete }) => {
+import { memo, useContext } from "react";
+import { HandlerContext } from "../App";
+
+const ContectItems = ({ id, name, email }) => {
+  const { onDelete } = useContext(HandlerContext);
   const onClick = () => {
     onDelete(id);
   };
@@ -13,4 +17,4 @@ const ContectItems = ({ id, name, email, onDelete }) => {
   );
 };
 
-export default ContectItems;
+export default memo(ContectItems);

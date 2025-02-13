@@ -1,7 +1,9 @@
 import "./ContectEditor.css";
-import { useRef, useState } from "react";
+import { useRef, useState, memo, useContext } from "react";
+import { HandlerContext } from "../App";
 
-const ContectEditor = ({ onCreate }) => {
+const ContectEditor = () => {
+  const { onCreate } = useContext(HandlerContext);
   const nameRef = useRef();
   const emailRef = useRef();
   const [input, setInput] = useState({
@@ -53,4 +55,4 @@ const ContectEditor = ({ onCreate }) => {
   );
 };
 
-export default ContectEditor;
+export default memo(ContectEditor);

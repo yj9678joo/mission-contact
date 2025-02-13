@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useReducer, useRef } from "react";
+import { useState, useReducer, useRef, createContext, useMemo } from "react";
 import ContectEditor from "./component/ContectEditor";
 import ContectList from "./component/ContectList";
 
@@ -13,6 +13,9 @@ function reducer(state, action) {
       return state;
   }
 }
+
+export const ListContext = createContext();
+export const HandlerContext = createContext();
 
 function App() {
   const idRef = useRef(0);
@@ -35,11 +38,23 @@ function App() {
     });
   };
 
+  const memorizedHandlers = useMemo(
+    () => ({
+      onCreate,
+      onDelete,
+    }),
+    []
+  );
+
   return (
     <div className="App">
       <h1>Contact List</h1>
-      <ContectEditor onCreate={onCreate} />
-      <ContectList list={list} onDelete={onDelete} />
+      <ListContext.Provider value={list}>
+        <HandlerContext.Provider value={memorizedHandlers}>
+          <ContectEditor />
+          <ContectList />
+        </HandlerContext.Provider>
+      </ListContext.Provider>
     </div>
   );
 }
